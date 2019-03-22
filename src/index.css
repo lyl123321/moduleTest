@@ -1,0 +1,112 @@
+body {
+	background: lightcyan;
+}
+
+.img-center {
+    width: 200px;
+    height: 150px;
+    margin: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-center img {
+    display: block;
+    position: absolute;
+}
+
+.img-center img.aspectFill-x {
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.img-center img.aspectFill-y {
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dialog-dropback {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.25);
+}
+
+.dialog-dropback .container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 150px;
+	margin: -50px 0 0 -100px;
+	background: white;
+	display: flex;
+	flex-flow: column;
+	text-align: center;
+	vertical-align: middle;
+	box-shadow: 0 0 5px 0;
+}
+
+.dialog-dropback .head {
+	flex: 3 3;
+	line-height: 45px;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.dialog-dropback .content {
+	flex: 3 3;
+	line-height: 25px;
+	font-size: 13px;
+	font-weight: 300;
+}
+
+.dialog-dropback .footer {
+	flex: 4 4;
+	display: flex;
+}
+
+.dialog-dropback .footer button {
+	flex: 1;
+	font-size: 15px;
+	font-weight: 500;
+	padding: 0;
+	border-width: 2px 0 0 0;
+	border-color: gainsboro;
+	background: white;
+	position: relative;
+}
+
+.dialog-dropback .footer button:first-child::after {
+	content: '';
+	width: 2px;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: -1px;
+	z-index: 1;
+	background-color: gainsboro;
+}
+
+.dialog-dropback .footer button:focus {
+	background-color: lightblue;
+}
+
+button.aspect {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 20px;
+	color: red;
+	background-color: #DCDCDC;
+}
+
+button {
+	outline: 0;
+}
