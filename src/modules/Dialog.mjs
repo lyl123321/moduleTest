@@ -1,23 +1,21 @@
 let instance = null;
 
-function Dialog({title = '这是标题', content = '这是提示内容'} = {}) {
-	this.title = title;
-	this.content = content;
-	
-	this.html = `<div class="dialog-dropback">\
-            <div class="container">\
-                <div class="head">${this.title}</div>\
-                <div class="content">${this.content}</div>\
-                <div class="footer">\
-                    <button class="cancel">取消</button>\
-                    <button class="confirm">确认</button>\
-                </div>\
-            </div>\
-        </div>`;
-}
-
-Dialog.prototype = {
-	constructor: Dialog,
+class Dialog {
+	constructor({title = '这是标题', content = '这是提示内容'} = {}) {
+		this.title = title;
+		this.content = content;
+		
+		this.html = `<div class="dialog-dropback">\
+	            <div class="container">\
+	                <div class="head">${this.title}</div>\
+	                <div class="content">${this.content}</div>\
+	                <div class="footer">\
+	                    <button class="cancel">取消</button>\
+	                    <button class="confirm">确认</button>\
+	                </div>\
+	            </div>\
+        	</div>`;
+	}
 	
 	show() {
 		instance == null ? true : this.destory();
@@ -35,7 +33,7 @@ Dialog.prototype = {
 				resolve(e);
 			});
 		});
-	},
+	}
 	
 	destory() {
 		instance = null;

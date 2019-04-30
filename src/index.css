@@ -2,6 +2,13 @@ body {
 	background: lightcyan;
 }
 
+.img-wrap {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .img-center {
     width: 200px;
     height: 150px;

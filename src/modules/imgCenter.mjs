@@ -1,7 +1,12 @@
-import {imgLoad} from './imgLoad.mjs'
+import imgLoad from './imgLoad.mjs'
 
-export function imgCenter(domList, mode) {
-	[...domList].forEach(function(item) {
+export default function imgCenter(domList, mode) {
+	if(domList[Symbol.iterator] === undefined)
+		domList = [domList];
+	
+	for(const item of domList) {
+		if(!item || item instanceof Element === false) continue;
+	
 		const img = item.children[0],
 			itemW = item.offsetWidth,
 			itemH = item.offsetHeight,
@@ -27,5 +32,5 @@ export function imgCenter(domList, mode) {
 			
 			img.classList.add(resultMode);
 		});
-	});
+	}
 }

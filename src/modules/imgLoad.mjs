@@ -1,4 +1,4 @@
-export function imgLoad(img) {
+export default function imgLoad(img) {
 	return new Promise((resolve, reject) => {
 		if(img.complete === true) {
 			resolve();
